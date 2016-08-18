@@ -1,0 +1,27 @@
+{
+  "name": "movies",
+  "description": "movie admin",
+  "main": "app.js",
+  "authors": [
+    "小齐 <705764065@qq.com>"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "node",
+    "mongoodb",
+    "jade"
+  ],
+  "homepage": "https://github.com/xiaoqi1102/movies",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
