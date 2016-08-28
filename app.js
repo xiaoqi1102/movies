@@ -24,7 +24,7 @@ console.log('movies started on port '+3000);
 
 //index page
 app.get('/',function (req, res) {
-    Movie.fetch(function (err, movies) {
+    Movie.fetch({},function (err, movies) {
         if(err){
             console.log(err);
         }
@@ -53,7 +53,7 @@ app.get('/movie/:id',function (req, res) {
 //list page
 
 app.get('/admin/list',function (req, res) {
-    Movie.fetch(function (err, movies) {
+    Movie.fetch({},function (err, movies) {
         if(err){
             console.log(err);
         }

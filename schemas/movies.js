@@ -34,9 +34,10 @@ MovieSchema.pre('save', function (next) {
 });
 
 MovieSchema.statics = {
-    fetch: function (cb) {
+    fetch: function (obj={},cb) {
+        console.log('obj:',obj)
         return this
-            .find({})
+            .find(obj)
             .sort('meta.updateAt')
             .exec(cb)
     },
@@ -44,7 +45,7 @@ MovieSchema.statics = {
         return this
             .findOne({_id: id})
             .exec(cb)
-    }
+    },
 };
 
 module.exports = MovieSchema;
