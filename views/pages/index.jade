@@ -2,13 +2,20 @@ extends ./../layout
 
 block content
     .container
-        .row
+        .row(style="padding-bottom:30px;")
+            .col-md-10
+                form#searchMovies.form-inline
+                    .form-group
+                        label.control-label 电影名称&nbsp;
+                        input.form-control#title(name="title")
+                    .form-group
+                        button.btn.btn-default(type="submit") 搜索
             .col-md-2
                 .btn-group
                     a.btn.btn-info(href="/admin/movies") 新增影片
                     a.btn.btn-primary(href="/admin/list") 管理影片
     .container
-        .row
+        .row#indexMoviesBox
             //-var movies=[{_id:1123,title:'怪物史莱克'}]
             -each item in movies
                 .col-md-2
@@ -19,3 +26,4 @@ block content
                             h3 #{item.title}
                             p
                                 a.btn.btn-primary(href="/movie/#{item._id}",role="button") 观看影片
+    script(src="/js/searchMovies.js")

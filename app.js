@@ -64,6 +64,22 @@ app.get('/admin/list',function (req, res) {
     })
 
 });
+//search movies
+app.get('/movies/search',function (req, res) {
+    let searchObj={};
+    console.log('params',req.params);
+    console.log('queryString',req.query);
+    searchObj=req.query;
+    Movie.fetch(searchObj,function (err, movies) {
+        //console.log(movies);
+        if(err){
+            console.log(err);
+        }
+        res.send({
+            movies:movies
+        })
+    })
+});
 //admin update movie
 app.get('/admin/update/:id',function (req, res) {
     var id =req.params.id;
