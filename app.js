@@ -41,6 +41,7 @@ app.get('/',function (req, res) {
 app.get('/movie/:id',function (req, res) {
      var id =req.params.id;
     Movie.findById(id,function (err, movie) {
+        console.log(movie);
         res.render('detail',{
             title:'电影详情页',
             movie:movie

@@ -3,6 +3,12 @@ extends ./../layout
 block content
     .container
         .row
+            .col-md-2
+                .btn-group
+                    a.btn.btn-info(href="/admin/movies") 新增影片
+                    a.btn.btn-primary(href="/admin/list") 管理影片
+    .container
+        .row
             //-var movies=[{_id:1123,title:'怪物史莱克'}]
             -each item in movies
                 .col-md-2
