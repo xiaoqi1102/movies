@@ -67,8 +67,8 @@ app.get('/admin/list',function (req, res) {
 //search movies
 app.get('/movies/search',function (req, res) {
     let searchObj={};
-    console.log('params',req.params);
-    console.log('queryString',req.query);
+   // console.log('params',req.params);
+    //console.log('queryString',req.query);
     searchObj=req.query;
     Movie.fetch(searchObj,function (err, movies) {
         //console.log(movies);
