@@ -72,6 +72,13 @@ app.get('/movies/search',function (req, res) {
    // console.log('params',req.params);
     //console.log('queryString',req.query);
     searchObj=req.query;
+    let {title}=req.query;
+    //console.log(title);
+    let testText=new RegExp(title,'i');
+    console.log('testText: ',testText);
+    searchObj=Object.assign({},searchObj,{
+        title:testText
+    });
     Movie.fetch(searchObj,function (err, movies) {
         //console.log(movies);
         if(err){

@@ -35,7 +35,7 @@ MovieSchema.pre('save', function (next) {
 
 MovieSchema.statics = {
     fetch: function (obj={},cb) {
-        console.log('obj:',obj)
+        console.log('obj:',obj);
         return this
             .find(obj)
             .sort('meta.updateAt')
