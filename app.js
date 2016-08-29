@@ -10,6 +10,8 @@ mongoose.connect('mongodb://localhost/movie');
 var port =process.env.PORT||3000;
 var app = express();
 var bodyParser = require('body-parser');
+var logger = require('morgan');
+app.use(logger());
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.set('views','./views/pages');
